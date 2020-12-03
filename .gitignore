@@ -102,3 +102,5 @@ dist
 
 # TernJS port file
 .tern-port
+.node-persist/storage/4651253a81c216ecf694139dcbb20d02
+ARUGA.data.json
