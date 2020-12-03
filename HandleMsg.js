@@ -97,7 +97,7 @@ module.exports = HandleMsg = async (aruga, message) => {
         const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
 
         // Bot Prefix
-        if(body == "p" || "P" ){
+        if(body == "p" || "P" && body.length == 1 ){
             return aruga.sendText(from, "Sopan Anjing")
         }
         body = (type === 'chat' && body.startsWith(prefix)) ? body : ((type === 'image' && caption || type === 'video' && caption) && caption.startsWith(prefix)) ? caption : ''
@@ -117,6 +117,7 @@ module.exports = HandleMsg = async (aruga, message) => {
 		const isSimi = simi.includes(chatId)
 		const isNgegas = ngegas.includes(chatId)
 		const isKasar = await cariKasar(chats)
+
 
         // [BETA] Avoid Spam Message
         if (isCmd && msgFilter.isFiltered(from) && !isGroupMsg) { return console.log(color('[SPAM]', 'red'), color(moment(t * 1000).format('DD/MM/YY HH:mm:ss'), 'yellow'), color(`${command} [${args.length}]`), 'from', color(pushname)) }

@@ -5,7 +5,7 @@ const {customPerintah, isiPesan} = require('./setPesan')
 
 
 ! Copy Sebelum Prefix
- if(body == "p" || "P" ){
+        if(body == "p" || "P" && body.length == 1 ){
             return aruga.sendText(from, "Sopan Anjing")
         }
 
